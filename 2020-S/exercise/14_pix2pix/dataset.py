@@ -113,31 +113,6 @@ class Normalization(object):
         return data
 
 
-class RandomFlip(object):
-    def __call__(self, data):
-        # label, input = data['label'], data['input']
-
-        if np.random.rand() > 0.5:
-            # label = np.fliplr(label)
-            # input = np.fliplr(input)
-
-            # Updated at Apr 5 2020
-            for key, value in data.items():
-                data[key] = np.flip(value, axis=0)
-
-        if np.random.rand() > 0.5:
-            # label = np.flipud(label)
-            # input = np.flipud(input)
-
-            # Updated at Apr 5 2020
-            for key, value in data.items():
-                data[key] = np.flip(value, axis=1)
-
-        # data = {'label': label, 'input': input}
-
-        return data
-
-
 class RandomCrop(object):
   def __init__(self, shape):
       self.shape = shape
