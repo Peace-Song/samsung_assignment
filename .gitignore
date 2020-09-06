@@ -5,3 +5,5 @@ venv/
 */**/log
 */**/__pycache__
 */**/checkpoint
+
+*/**/result
